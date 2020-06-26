@@ -1,4 +1,5 @@
-#pragma once
+#ifndef PRIORITY_H
+#define PRIORITY_H
 
 #include "Cons.h"
 
@@ -40,3 +41,5 @@ namespace Interpreter {
 		PriorityNode
 	>::type;
 }
+
+#endif

@@ -1,4 +1,5 @@
-#pragma once
+#ifndef ATOM_H
+#define ATOM_H
 
 #include "Scanner.h"
 #include "Number.h"
@@ -16,3 +17,5 @@ namespace Interpreter {
 		}
 	};
 }
+
+#endif

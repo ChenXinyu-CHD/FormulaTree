@@ -1,4 +1,5 @@
-#pragma once
+#ifndef CALCULATOR_H
+#define CALCULATOR_H
 
 #include <string>
 #include <exception>
@@ -18,3 +19,5 @@ namespace Interpreter {
 		}
 	};
 }
+
+#endif

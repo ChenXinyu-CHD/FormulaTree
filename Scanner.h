@@ -1,4 +1,5 @@
-#pragma once
+#ifndef SCANNER_H
+#define SCANNER_H
 
 #include <string>
 #include <exception>
@@ -6,28 +7,30 @@
 #include "Calculator.h"
 
 namespace Interpreter {
-	//Scanner¼°ÆäËùÓÐ×ÓÀà¶¼±»ÓÃÓÚÉ¨Ãè×Ö·û´®£¨´úÂë£©
-	//Í¬Ê±ËüÃÇÒ²ÊÇCalculatorÀà¼°Æä×ÓÀàµÄ½¨ÔìÕß
-	//ScannerËäÈ»¾ßÓÐ¼Ì³ÐÊ÷
-	//µ«Êµ¼ÊÉÏËüµÄ×ÓÀà²¢²»ÖØÓÃ¸¸ÀàµÄÈÎºÎ´úÂë
-	//Í¬Ê±Ëü±¾ÉíÒ²²»ÒÀÀµÔËÐÐÊ±¶àÌ¬
-	//ËüµÄ¼Ì³ÐÌåÏµÖ»ÊÇÔÚÓïÒåÉÏ±êÊ¶ÆäÉí·Ý£¬ÔÚÓï·¨ÉÏÊÇ¶àÓàµÄ¡£
-	//ScannerÀà¼°Æä×ÓÀàÖ»¾ßÓÐstaticÊôÐÔºÍ·½·¨£¬ËüÃÇ²»ÄÜÓÃÓÚ¹¹Ôì¶ÔÏó
+	//Scannerï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½à¶¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½É¨ï¿½ï¿½ï¿½Ö·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ë£©
+	//Í¬Ê±ï¿½ï¿½ï¿½ï¿½Ò²ï¿½ï¿½Calculatorï¿½à¼°ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä½ï¿½ï¿½ï¿½ï¿½ï¿½
+	//Scannerï¿½ï¿½È»ï¿½ï¿½ï¿½Ð¼Ì³ï¿½ï¿½ï¿½
+	//ï¿½ï¿½Êµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½à²¢ï¿½ï¿½ï¿½ï¿½ï¿½Ã¸ï¿½ï¿½ï¿½ï¿½ï¿½ÎºÎ´ï¿½ï¿½ï¿½
+	//Í¬Ê±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ò²ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê±ï¿½ï¿½Ì¬
+	//ï¿½ï¿½ï¿½Ä¼Ì³ï¿½ï¿½ï¿½ÏµÖ»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï±ï¿½Ê¶ï¿½ï¿½ï¿½ï¿½ï¿½Ý£ï¿½ï¿½ï¿½ï¿½ï·¨ï¿½ï¿½ï¿½Ç¶ï¿½ï¿½ï¿½Ä¡ï¿½
+	//Scannerï¿½à¼°ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö»ï¿½ï¿½ï¿½ï¿½staticï¿½ï¿½ï¿½ÔºÍ·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ç²ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ú¹ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	struct Scanner {
 		static Calculator* make(Iter& iter) {
 			return nullptr;
 		}
 	};
-	//µ±Ç°ScannerÎÞ·¨½âÎö£¬µ«²»Çå³þÊÇ·ñÆäËüScanner¿É·ñ½âÎöÊ±Å×³ö
+	//ï¿½ï¿½Ç°Scannerï¿½Þ·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ç·ï¿½ï¿½ï¿½ï¿½ï¿½Scannerï¿½É·ï¿½ï¿½ï¿½ï¿½Ê±ï¿½×³ï¿½
 	struct ScannerException : public std::exception {
 		virtual const char* what() {
 			return "Unresolved statement!";
 		}
 	};
-	//¿ÉÒÔÖ±½ÓÈ·¶¨±í´ïÊ½³ö´íÊ±Å×³ö
+	//ï¿½ï¿½ï¿½ï¿½Ö±ï¿½ï¿½È·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê½ï¿½ï¿½ï¿½ï¿½Ê±ï¿½×³ï¿½
 	struct GrammerErr : public std::exception {
 		virtual const char* what() {
 			return "Unresolved statement!";
 		}
 	};
 }
+
+#endif

@@ -1,4 +1,5 @@
-#pragma once
+#ifndef NUMBER_H
+#define NUMBER_H
 
 #include "Scanner.h"
 #include "Calculator.h"
@@ -39,3 +40,5 @@ namespace Interpreter {
 		}
 	};
 }
+
+#endif

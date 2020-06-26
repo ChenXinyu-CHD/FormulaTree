@@ -1,4 +1,5 @@
-#pragma once
+#ifndef CONS_H
+#define CONS_H
 
 namespace tools {
 	template<
@@ -68,3 +69,5 @@ namespace tools {
 		using type = F<T, void>;
 	};
 }
+
+#endif

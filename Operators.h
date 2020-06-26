@@ -1,4 +1,5 @@
-#pragma once
+#ifndef OPERATORS_H
+#define OPERATORS_H
 
 #include "Calculator.h"
 
@@ -46,7 +47,7 @@ namespace Interpreter {
 				return ErrMsg.c_str();
 			}
 		};
-		//ÓÃÓÚÔËÐÐÊ±È·¶¨²Ù×÷ÀàÐÍ
+		//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê±È·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 		static const char name = oper;
 	};
 
@@ -71,3 +72,5 @@ namespace Interpreter {
 		return lhs->value() % rhs->value();
 	}
 }
+
+#endif
